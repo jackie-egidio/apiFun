@@ -27,7 +27,7 @@
                         alert(result);
                         favQ = JSON.parse(result);
 
-                        document.getElementById("results").innerHTML = "results: " + favQ["quote"]["author"];
+                        document.getElementById("results").innerHTML = "results: " + favQ["body"]["author"];
                     }
                     else if (request.readyState == 4 && request.status != 200) {
                         document.getElementById("results").innerHTML = "Something is wrong";
