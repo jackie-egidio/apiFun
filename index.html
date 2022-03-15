@@ -10,24 +10,24 @@
             function getFavQ() {
                 // make request
                 request = new XMLHttpRequest();
-                console.log("1 - request object created");
+//                 console.log("1 - request object created");
 
                 // open request file
                 request.open("GET", "https://favqs.com/api/qotd", true);
-                console.log("2 - opened request file");
+//                 console.log("2 - opened request file");
 
                 // set up event handler/callback
                 request.onreadystatechange = function() {
-                    console.log("3 - readystatechange event fired");
+//                     console.log("3 - readystatechange event fired");
 
                     if (request.readyState == 4 && request.status == 200) {
                         // checks if successful
-                        console.log("5 - response received");
+//                         console.log("5 - response received");
                         result = request.responseText;
                         alert(result);
                         favQ = JSON.parse(result);
 
-                        document.getElementById("results").innerHTML = "results: " + favQ.quote.body + "<br />" + favQ.quote.author;
+                        document.getElementById("results").innerHTML = "Quote: " + favQ.quote.body + "<br />Author: " + favQ.quote.author;
                     }
                     else if (request.readyState == 4 && request.status != 200) {
                         document.getElementById("results").innerHTML = "Something is wrong";
@@ -37,7 +37,7 @@
                     }
                 }
                 request.send();
-                console.log("4 - request sent");
+//                 console.log("4 - request sent");
             }
         </script>
     </head>
@@ -50,9 +50,7 @@
                 the options of a 200 Successful request Tweet fields, 429 Rate Limit Exceeded, 
                 200 Success Deleted Tweet, 200 Success Request Poll Fields, etc.
             </h3>
-            <div id="results">
-
-            </div>
+            <div id="results">Oops! Something went wrong.</div>
         </div>
     </body>
 </html>
