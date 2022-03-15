@@ -13,7 +13,7 @@
                 console.log("1 - request object created");
 
                 // open request file
-                request.open("GET", "/api/qotd", true);
+                request.open("GET", "https://favqs.com/api/qotd", true);
                 console.log("2 - opened request file");
 
                 // set up event handler/callback
@@ -45,7 +45,7 @@
         <div id="info">
             <h1>My API: Twitter</h1>
             <h2>Found it on Postman.com or </h2>
-            <h2 class="notBold">https://favqs.com/api/</h2>
+            <h2 class="notBold">https://favqs.com/api/qotd</h2>
             <h3 class="notBold">I used GET to request the options for a single Tweet lookup. This includes 
                 the options of a 200 Successful request Tweet fields, 429 Rate Limit Exceeded, 
                 200 Success Deleted Tweet, 200 Success Request Poll Fields, etc.
