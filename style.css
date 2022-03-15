@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+}
+
+#info {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.notBold {
+    font-weight: normal;
+}
