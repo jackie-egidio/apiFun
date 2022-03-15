@@ -13,7 +13,7 @@
                 console.log("1 - request object created");
 
                 // open request file
-                request.open("GET", "/api/quotes/:quote_id", true);
+                request.open("GET", "https://api.openweathermap.org/data/2.5/onecall?lat=71.0589&lon=42.3601&exclude=hourly,daily&units=imperial&appid=xxx", true);
                 console.log("2 - opened request file");
 
                 // set up event handler/callback
@@ -27,7 +27,7 @@
                         alert(result);
                         favQ = JSON.parse(result);
 
-                        document.getElementById("results").innerHTML = "results: " + favQ["author"]["body"];
+                        document.getElementById("results").innerHTML = "results: " + favQ["current"]["temp"];
                     }
                     else if (request.readyState == 4 && request.status != 200) {
                         document.getElementById("results").innerHTML = "Something is wrong";
