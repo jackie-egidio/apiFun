@@ -14,8 +14,9 @@
                 //     .catch (error => console.log(error))	
                 // } 
 
-                res = fetch("https://favqs.com/api/qotd")
-                    .then (res => res.text())
+                res = fetch("https://favqs.com/api/qotd",
+                    { method: 'GET'}).then(respose => response.json())
+                    .then (getResponse => document.getElementById("results2").innerHTML = getResponse)
             }
 
             function getFavQ() {
@@ -61,6 +62,7 @@
             <h2 class="notBold">https://favqs.com/api/qotd</h2>
             <h3 class="notBold">Using this API, I get the quote of the day from FavQs.com. The results are below.</h3>
             <div id="results" style="font-size: 30px;">Oops! Something went wrong.</div>
+            <div id="results2"></div>
         </div>
     </body>
 </html>
