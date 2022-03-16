@@ -8,15 +8,9 @@
         <meta charset="utf-8">
         <script>
             async function fetchQuote() {
-                // res = fetch("http://secretcheese.com/comp20/demo/location.json")
-                //     .then (res => res.text())
-                //     .then (data => console.log(data))
-                //     .catch (error => console.log(error))	
-                // } 
-
-                res = fetch("https://favqs.com/api/qotd",
-                    { method: 'GET'}).then(respose => response.json())
-                    .then (getResponse => document.getElementById("results2").innerHTML = getResponse)
+                fetch('https://favqs.com/api/qotd')
+                  .then(response => response.json())
+                  .then(data => console.log(data));
             }
 
             function getFavQ() {
